@@ -1,0 +1,5 @@
+Kubernetes Notes:
+
+June 7th, 2025
+    Today I have learned how to push files to GIT
+    Created git repository
