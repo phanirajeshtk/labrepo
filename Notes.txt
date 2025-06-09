@@ -2,4 +2,50 @@ Kubernetes Notes:
 
 June 7th, 2025
     Today I have learned how to push files to GIT
-    Created git repository
+    Created git repositoryls
+    
+    What is Kubernetes and why we need it?
+      Kubernetes is the operating system of the cloud
+      Kubernetes is the bunch of virtual machines who communicate properly with each other and do divide their workload
+     control plane 
+        worker nodes
+          
+    YAML File - Specify Hey, Kubernetes I want 3 replicas of this image
+        Kubernetes Control plane then creates containers in the available worked nodes or create additional worker nodes and create replicas based on the demand
+        
+    What are pods?
+        A pod is the smallest element on  a kuberntes cluster
+        Pod of whales
+        A pod not a container!
+        A pod is a collection of containers + other resources
+
+        Single container - Networking
+        Multi container - Storage
+        InitCotainer 
+
+    Commands:
+    kubectl get pod nginx-misha -o yaml
+     kubectl edit pod httpd
+     kubectl get pods
+     kubectl edit pod httpd-misha
+     kubectl get pods -o wide
+     kubectl describe pod nginx-misha
+     PS C:\Users\rajes\Documents\repos\Labrepo> kubectl run nginx-yaml --image=nginx --dry-run=client -o yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-yaml
+  name: nginx-yaml
+spec:
+  containers:
+  - image: nginx
+    name: nginx-yaml
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+--Commands
+kubectl create -f nginx.yaml
+kubectl apply -f nginx.yaml
